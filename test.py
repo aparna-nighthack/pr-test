@@ -1,10 +1,15 @@
 def fibonacci(n):
-    """Generate Fibonacci series up to n terms"""
+    """Return a list of the first n Fibonacci numbers."""
+    if n <= 0:
+        return []
+    sequence = []
     a, b = 0, 1
     for _ in range(n):
-        print(a, end=" ")
+        sequence.append(a)
         a, b = b, a + b
+    return sequence
 
-# Get input from user
-terms = int(input("Enter the number of terms: "))
-fibonacci(terms)
+if __name__ == "__main__":
+    # Get input from user and print the resulting list
+    terms = int(input("Enter the number of terms: "))
+    print(fibonacci(terms))
